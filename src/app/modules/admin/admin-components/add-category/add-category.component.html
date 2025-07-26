@@ -8,10 +8,11 @@
             <div nz-row>
                 <div nz-col [nzMd]="24" [nzSm]="24" [nzXs]="24">
                     <div class="profile-badge">
-                        <label for="upload_profile_image" class="upload-label">
-                            <img class="profile" alt="profile" />
+                        <label for="upload_profile_image" class="upload-label" *ngIf="selectedFile">
+                            <img class="profile" [src]="imagePreview" alt="profile" />
                         </label>
-                        <input type="file" nz-button nzType="primary" id="upload_profile_image" accept="image/x-png,image/gif,image/jpeg">
+                        <input type="file" nz-button nzType="primary" id="upload_profile_image" 
+                        accept="image/x-png,image/gif,image/jpeg" (change)="onFileSelected($event)">
                         <button nz-button nzShape="circle">
                         </button>
                     </div>
@@ -29,7 +30,7 @@
                     <nz-form-item>
                         <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
                             <textarea rows="1" nz-input placeholder="Description" 
-                            formControlName="Description"></textarea>
+                            formControlName="description"></textarea>
                         </nz-form-control>
                     </nz-form-item>
                 </div>

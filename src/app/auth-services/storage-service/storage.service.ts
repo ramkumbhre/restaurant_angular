@@ -26,9 +26,9 @@ export class StorageService {
       window.localStorage.setItem(USER, JSON.stringify(user));
     }
   }
-
+  
   static getToken(): string | null {
-    return this.isBrowser() ? localStorage.getItem(TOKEN) : null;
+    return localStorage.getItem(TOKEN);
   }
 
   static getUser(): any {
