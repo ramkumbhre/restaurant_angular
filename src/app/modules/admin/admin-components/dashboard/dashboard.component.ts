@@ -18,7 +18,7 @@ export class DashboardComponent {
 categories: any = [];
 validateForm: FormGroup;
 size: NzButtonSize = 'large';
-isSpinning: boolean;
+isSpinning: boolean; 
 
 constructor(private adminService: AdminService,
     private fb: FormBuilder) {}

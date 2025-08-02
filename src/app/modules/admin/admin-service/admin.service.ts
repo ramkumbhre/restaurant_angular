@@ -48,8 +48,7 @@ export class AdminService {
     return this.http.get<any[]>(BASIC_URL + `api/admin/${categoryId}/products`,
     {
         headers: this.createAuthorizationHeader()
-    }
-  )
+    })
 }
 
   getProductsByCategoryAndTitle(categoryId: number ,title : String):Observable<any>{
@@ -64,6 +63,22 @@ export class AdminService {
   deleteProduct(productId: number ):Observable<any>{
     
     return this.http.delete<[]>(BASIC_URL + `api/admin/product/${productId}`,
+      {
+        headers : this.createAuthorizationHeader()
+      })
+  }
+
+  getProductById(productId: number): Observable<any> {
+    return this.http.get<[]>(BASIC_URL + `api/admin/product/${productId}`,
+    {
+        headers: this.createAuthorizationHeader()
+    })
+}
+
+
+ updateProduct(productId : number, productDto: any):Observable<any>{
+    
+    return this.http.put<[]>(BASIC_URL + `api/admin/product/${productId}`, productDto,
       {
         headers : this.createAuthorizationHeader()
       })

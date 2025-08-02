@@ -1,6 +1,6 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { AdminService } from '../../admin-service/admin.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { title } from 'node:process';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -9,7 +9,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-view-products',
-  imports: [CommonModule, ReactiveFormsModule, NzButtonModule],
+  imports: [CommonModule, ReactiveFormsModule, NzButtonModule,RouterModule],
   templateUrl: './view-products.component.html',
   styleUrl: './view-products.component.scss'
 })
